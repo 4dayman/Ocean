@@ -95,8 +95,6 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-style: normal;
   background: url("../img/background.png") rgba(32, 8, 59, 0.75);
-  background-repeat: no-repeat;
-  background-size: cover !important;
 }
 
 body._lock {
@@ -107,9 +105,13 @@ body._lock {
   max-width: 1434px;
   margin: 0 auto;
   overflow: hidden;
-  background: url("../img/background.png") rgba(32, 8, 59, 0.75);
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+@media (max-width: 1440px) {
+  .wrapper {
+    background: url("../img/background.png") rgba(32, 8, 59, 0.75);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .content {
@@ -415,6 +417,7 @@ body._lock {
 }
 .first_row .nft_logo {
   display: none;
+  width: 100%;
 }
 @media (max-width: 1180px) {
   .first_row {
@@ -438,18 +441,28 @@ body._lock {
             align-items: center;
     justify-items: center;
   }
+  .first_row .nft_logo div {
+    margin-right: 10px;
+  }
+  .first_row .nft_logo div:first-child {
+    margin-left: -20px;
+  }
   .first_row .nft_logo div:last-child {
     margin-right: 0;
   }
 }
 @media (max-width: 1180px) and (max-width: 600px) {
   .first_row .nft_logo {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    justify-items: space-evenly;
+  }
+  .first_row .nft_logo .bit {
+    height: 16px;
+  }
+  .first_row .nft_logo div {
+    height: 28px;
   }
   .first_row .nft_logo img {
-    width: 85px;
+    height: 100%;
   }
 }
 .first_row .first_row_left {
@@ -973,7 +986,7 @@ body._lock {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  padding-bottom: 47px;
+  margin-bottom: 47px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -987,7 +1000,7 @@ body._lock {
 @media (max-width: 768px) {
   .card_title,
 .top_nft_title {
-    padding-bottom: 32px;
+    margin-bottom: 29px;
   }
 }
 .card_title p,
@@ -997,6 +1010,13 @@ body._lock {
   font-size: 26.531px;
   line-height: 33px;
   color: #FFFFFF;
+}
+@media (max-width: 768px) {
+  .card_title p,
+.top_nft_title p {
+    font-size: 18.0606px;
+    line-height: 23px;
+  }
 }
 .card_title a,
 .top_nft_title a {
@@ -1031,7 +1051,7 @@ body._lock {
 @media (max-width: 487px) {
   .top_nft {
     scale: 0.7;
-    margin: -44px -45px -44px -64px !important;
+    margin: -94px -45px -44px -64px !important;
   }
 }
 .top_nft:last-child {
@@ -1344,13 +1364,16 @@ body._lock {
   border-radius: 2.21092px;
   font-family: "Orbitron";
   font-weight: 700;
-  font-size: 19.8983px;
-  line-height: 25px;
+  font-size: 12px;
+  line-height: 15px;
   color: #FFFFFF;
   padding: 10px 10px 10px 55px;
   margin-top: -100px;
   margin-bottom: 108px;
   z-index: 2;
+}
+.explore img {
+  width: 27px;
 }
 @media (max-width: 768px) {
   .explore {
@@ -1377,7 +1400,7 @@ body._lock {
       flex-wrap: wrap;
   margin-bottom: 163px;
 }
-@media (max-width: 425px) {
+@media (max-width: 820px) {
   .buttons_group {
     margin-bottom: 108px;
   }
@@ -1390,10 +1413,15 @@ body._lock {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-bottom: 50px;
+}
+@media (max-width: 1264px) {
+  .buttons_group .buttons_group_left {
+    width: 100%;
+  }
 }
 .buttons_group .buttons_group_left .group_left_title {
   font-family: "Orbitron";
@@ -1406,8 +1434,21 @@ body._lock {
 .buttons_group .buttons_group_left .group_left_buttons {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 43px 1fr;
   grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 43px;
+     -moz-column-gap: 43px;
+          column-gap: 43px;
+  row-gap: 43px;
+}
+@media (max-width: 820px) {
+  .buttons_group .buttons_group_left .group_left_buttons {
+    -webkit-column-gap: 17px;
+       -moz-column-gap: 17px;
+            column-gap: 17px;
+    row-gap: 17px;
+    width: 100%;
+  }
 }
 .buttons_group .buttons_group_left .group_left_buttons .button {
   width: 368px;
@@ -1424,25 +1465,22 @@ body._lock {
   text-align: center;
   color: #FFFFFF;
   background: transparent;
-  margin-bottom: 43px;
-  margin-right: 43px;
+}
+@media (max-width: 1264px) {
+  .buttons_group .buttons_group_left .group_left_buttons .button {
+    width: 100%;
+  }
 }
 @media (max-width: 820px) {
   .buttons_group .buttons_group_left .group_left_buttons .button {
-    width: 152.52px;
     height: 40.76px;
-    margin-bottom: 17px;
-    margin-right: 17px;
     font-size: 10.9922px;
     line-height: 14px;
   }
 }
 @media (max-width: 375px) {
   .buttons_group .buttons_group_left .group_left_buttons .button {
-    width: 132.52px;
     height: 40.76px;
-    margin-bottom: 10px;
-    margin-right: 10px;
     font-size: 10.9922px;
     line-height: 14px;
   }
@@ -1489,11 +1527,11 @@ body._lock {
   font-size: 19.8983px;
   line-height: 25px;
   color: #FFFFFF;
-  padding-right: 45px;
+  margin-top: 18px;
 }
 @media (max-width: 820px) {
   .buttons_group .buttons_group_left .group_left_view p {
-    font-size: 8.24417px;
+    font-size: 12.24417px;
     line-height: 10px;
   }
   .buttons_group .buttons_group_left .group_left_view p img {
@@ -1528,7 +1566,7 @@ body._lock {
 @media (max-width: 487px) {
   .card {
     scale: 0.7;
-    margin: -44px -45px -44px -64px !important;
+    margin: -84px -45px -44px -64px !important;
   }
 }
 .card:last-child {
@@ -1715,7 +1753,6 @@ body._lock {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: -103px;
 }
 @media (max-width: 768px) {
   .top_sellers {
@@ -1765,12 +1802,9 @@ body._lock {
 }
 @media (max-width: 440px) {
   .top_sellers .sellers_container .sellers_row {
-    width: 370px;
-  }
-}
-@media (max-width: 375px) {
-  .top_sellers .sellers_container .sellers_row {
-    width: 310px;
+    width: 316.8px;
+    height: 89.75px;
+    border-radius: 20.7px;
   }
 }
 .top_sellers .sellers_container .sellers_row .number {
@@ -1790,6 +1824,8 @@ body._lock {
 @media (max-width: 440px) {
   .top_sellers .sellers_container .sellers_row .number {
     margin-left: 10.63px;
+    font-size: 13.8072px;
+    line-height: 32px;
   }
 }
 .top_sellers .sellers_container .sellers_row .seller {
@@ -1805,6 +1841,12 @@ body._lock {
   height: 69.84px;
   border-radius: 50%;
   margin-left: 17.22px;
+}
+@media (max-width: 440px) {
+  .top_sellers .sellers_container .sellers_row .seller .selleer_image {
+    width: 50.63px;
+    height: 50.63px;
+  }
 }
 .top_sellers .sellers_container .sellers_row .seller .selleer_image img {
   width: 100%;
@@ -1840,6 +1882,12 @@ body._lock {
   color: #FFFFFF;
   margin-bottom: -5px;
 }
+@media (max-width: 440px) {
+  .top_sellers .sellers_container .sellers_row .seller .seller_info h3 {
+    font-size: 13.8072px;
+    line-height: 32px;
+  }
+}
 .top_sellers .sellers_container .sellers_row .seller .seller_info span {
   font-family: "Roboto";
   font-weight: 500;
@@ -1853,8 +1901,20 @@ body._lock {
           align-items: center;
   color: rgba(255, 255, 255, 0.8);
 }
+@media (max-width: 440px) {
+  .top_sellers .sellers_container .sellers_row .seller .seller_info span {
+    font-size: 9.97186px;
+    line-height: 32px;
+  }
+}
 .top_sellers .sellers_container .sellers_row .seller .seller_info span img {
   margin-right: 5px;
+}
+@media (max-width: 440px) {
+  .top_sellers .sellers_container .sellers_row .seller .seller_info span img {
+    width: 6px;
+    height: 9px;
+  }
 }
 .top_sellers .sellers_container .sellers_row .seller_stats.green,
 .top_sellers .sellers_container .sellers_row .seller_stats.red {
@@ -1879,14 +1939,11 @@ body._lock {
 @media (max-width: 440px) {
   .top_sellers .sellers_container .sellers_row .seller_stats.green,
 .top_sellers .sellers_container .sellers_row .seller_stats.red {
-    margin-left: -10px;
-  }
-}
-@media (max-width: 375px) {
-  .top_sellers .sellers_container .sellers_row .seller_stats.green,
-.top_sellers .sellers_container .sellers_row .seller_stats.red {
-    margin-top: 40px;
-    margin-left: -80px;
+    margin-left: -27px;
+    font-size: 10.6564px;
+    line-height: 34px;
+    width: 72.92px;
+    height: 25.64px;
   }
 }
 .top_sellers .sellers_container .sellers_row .seller_stats.green {
@@ -1908,6 +1965,48 @@ body._lock {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 62px;
+}
+.top_sellers .button .explore {
+  display: none;
+}
+@media (max-width: 440px) {
+  .top_sellers .button button {
+    display: none;
+  }
+  .top_sellers .button .explore {
+    display: block;
+  }
+}
+.top_sellers .button .explore {
+  cursor: pointer;
+  border: 2px solid;
+  -o-border-image: linear-gradient(-92.23deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
+     border-image: linear-gradient(-92.23deg, #FF56F6 21.43%, #B936EE 50.63%, #3BACE2 100%, #406AFF 117.04%);
+  border-image-slice: 1;
+  background: transparent;
+  -webkit-box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+          box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+  -webkit-clip-path: polygon(20% 0%, 100% 0, 100% 70%, 80% 100%, 0 100%, 0% 30%);
+          clip-path: polygon(20% 0%, 100% 0, 100% 70%, 80% 100%, 0 100%, 0% 30%);
+  border-radius: 2.21092px;
+  font-family: "Orbitron";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  padding: 10px 10px 10px 55px;
+  margin-top: 14px;
+  margin-bottom: 108px;
+  z-index: 2;
+}
+.top_sellers .button .explore img {
+  width: 27px;
+}
+.top_sellers .button .explore:hover {
+  background: linear-gradient(-92.23deg, #3BACE2 21.43%, #406AFF 50.63%, #FF56F6 100%, #B936EE 117.04%);
+  -o-border-image: linear-gradient(92.23deg, #3BACE2 21.43%, #406AFF 50.63%, #FF56F6 100%, #B936EE 117.04%);
+     border-image: linear-gradient(92.23deg, #3BACE2 21.43%, #406AFF 50.63%, #FF56F6 100%, #B936EE 117.04%);
+  border-image-slice: 1;
 }
 .top_sellers .button button {
   border: 2px solid;
@@ -1957,7 +2056,7 @@ body._lock {
   color: #FFFFFF;
   margin-bottom: 23px;
 }
-@media (max-width: 375px) {
+@media (max-width: 440px) {
   .sellers_title p {
     font-size: 19.2314px;
     line-height: 24px;
@@ -1973,7 +2072,7 @@ body._lock {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-@media (max-width: 375px) {
+@media (max-width: 440px) {
   .sellers_title img {
     top: 10px;
   }
@@ -2002,6 +2101,12 @@ body._lock {
   width: 1600px;
   height: 556px;
   margin-bottom: 293px;
+}
+@media (max-width: 470px) {
+  .full_image {
+    margin-bottom: 203px;
+    height: 300px;
+  }
 }
 .full_image img {
   width: 100%;
@@ -2043,9 +2148,11 @@ body._lock {
 }
 @media (max-width: 470px) {
   .full_image .full_image_card {
-    width: 437px;
-    height: 593px;
-    margin-left: 36.4%;
+    width: 335.4px;
+    height: 275px;
+    padding: 33px 27px 50px 41px;
+    margin-top: -170px;
+    margin-left: 39.5%;
   }
 }
 .full_image .full_image_card h2 {
@@ -2059,6 +2166,12 @@ body._lock {
   color: #FFFFFF;
   margin-bottom: 18px;
 }
+@media (max-width: 470px) {
+  .full_image .full_image_card h2 {
+    font-size: 25.87px;
+    line-height: 35px;
+  }
+}
 .full_image .full_image_card p {
   font-family: "Inter";
   font-style: normal;
@@ -2069,6 +2182,13 @@ body._lock {
           font-feature-settings: "salt" on, "liga" off;
   color: #FFFFFF;
   margin-bottom: 44px;
+}
+@media (max-width: 470px) {
+  .full_image .full_image_card p {
+    font-size: 11.6415px;
+    line-height: 21px;
+    margin-bottom: 26px;
+  }
 }
 .full_image .full_image_card .learn {
   display: -webkit-box;
@@ -2084,16 +2204,27 @@ body._lock {
   font-weight: 500;
   font-size: 17.8037px;
   line-height: 27px;
-  /* identical to box height, or 150% */
   -webkit-font-feature-settings: "salt" on, "liga" off;
           font-feature-settings: "salt" on, "liga" off;
   color: #FFFFFF;
+}
+@media (max-width: 470px) {
+  .full_image .full_image_card .learn a {
+    font-size: 10.348px;
+    line-height: 16px;
+  }
 }
 .full_image .full_image_card .learn a img {
   margin-left: 44px;
   margin-top: 4px;
   width: 12px;
   height: 17px;
+}
+@media (max-width: 470px) {
+  .full_image .full_image_card .learn a img {
+    width: 7px;
+    height: 10px;
+  }
 }
 
 .sub_row {
@@ -2105,6 +2236,11 @@ body._lock {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 160px;
+}
+@media (max-width: 470px) {
+  .sub_row {
+    margin-bottom: 108px;
+  }
 }
 @media (max-width: 767px) {
   .sub_row {
@@ -2154,7 +2290,7 @@ body._lock {
   margin-bottom: 27px;
   margin-top: 27px;
 }
-@media (max-width: 410px) {
+@media (max-width: 440px) {
   .sub_row .sub_right h2 {
     font-size: 26.2703px;
     line-height: 33px;
@@ -2171,7 +2307,7 @@ body._lock {
   margin-bottom: 49px;
   max-width: 490px;
 }
-@media (max-width: 410px) {
+@media (max-width: 440px) {
   .sub_row .sub_right p {
     font-size: 13.1351px;
     line-height: 23px;
@@ -2385,11 +2521,6 @@ body._lock {
           transform: rotate(0deg);
 }
 
-@media (min-width: 768px) {
-  .sellers_title img {
-    display: none;
-  }
-}
 @media (max-width: 768px) {
   .sub_row {
     margin-top: -50px;
@@ -2499,9 +2630,8 @@ body._lock {
   color: #D9DBE1;
 }
 @media (max-width: 767px) {
-  .footer .terms p {
+  .footer .terms p:first-child {
     margin-right: 15px;
-    margin-left: 15px;
   }
   .footer .terms p:last-child {
     display: none;
