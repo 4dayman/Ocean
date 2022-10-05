@@ -2064,6 +2064,7 @@ body._lock {
 }
 .sellers_title p span {
   color: #FF56F6;
+  cursor: pointer;
 }
 .sellers_title img {
   position: absolute;
@@ -2071,6 +2072,7 @@ body._lock {
   right: -20px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+  cursor: pointer;
 }
 @media (max-width: 440px) {
   .sellers_title img {
